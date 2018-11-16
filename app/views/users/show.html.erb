@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Microposts:</strong>
+  <% @microposts = @user.microposts %>
+
+  <% if @microposts.first %>
+    <p>the first one</p>
+    <p><%= @microposts.first.content %></p>
+    <p>all of them</p>
+    <table>
+      <tbody>
+        <% @microposts.each do |micropost| %>
+          <tr>
+            <td><%= micropost.content %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>there are no microposts</p>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

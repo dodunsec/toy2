@@ -1,0 +1,10 @@
+branch-defaults:
+  master:
+    environment: Toyapp-env-20181109a
+global:
+  application_name: ToyApp
+  default_ec2_keyname: registry
+  default_platform: Ruby 2.5 (Puma)
+  default_region: us-east-1
+  profile: null
+  sc: git
