@@ -37,8 +37,8 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
         
       # Database setup
-#      - run: bundle exec rake db:create
-#      - run: bundle exec rake db:schema:load
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
 
       # run tests!
       - run:
@@ -76,7 +76,7 @@ jobs:
               sudo pip install 'six>=1.9' 'botocore==1.11.8' awsebcli==3.12.0
         - run:
             name: Deploy to EB
-            command: eb deploy Toyapp-env-20181109a --timeout 20
+            command: eb deploy Toyapp-env-1 --timeout 20
 
 workflows:
   version: 2
